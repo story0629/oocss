@@ -1,0 +1,19 @@
+nav {
+  height: 60px;
+  background-color: #123; }
+  nav .logo {
+    float: left;
+    line-height: 60px;
+    color: #fff;
+    text-transform: uppercase; }
+  nav .menu {
+    float: right; }
+    nav .menu li {
+      list-style: none;
+      float: left; }
+      nav .menu li a {
+        display: block;
+        line-height: 60px;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 0 15px; }

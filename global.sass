@@ -1,0 +1,60 @@
+$desktop_size: 1200
+$tablet_size: 768
+$mobile_size: 480
+@import url('https://fonts.googleapis.com/css?family=PT+Serif:400,700')
+@import url('https://fonts.googleapis.com/earlyaccess/notosanstc.css')
+*
+    font-family: "PT serif","Noto Sans TC",sans-serif
+    box-sizing: border-box
+body,ul,li,h1,h2,h3,h4,h5,h6,p
+    margin: 0
+    padding: 0
+.full-width
+    width: 100%
+.fixed-width
+    width: 1200px
+    margin: auto
+$list1 : sm md lg
+$list2 : sm md
+$list3 : sm
+@for $i from 1 through 12
+    .col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10,.col-11,.col-12,
+    .col-lg-1,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-10,.col-lg-11,.col-lg-12,
+    .col-md-1,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12,
+    .col-sm-1,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-10,.col-sm-11,.col-sm-12,
+    .col-gap-1,.col-gap-2,.col-gap-3,.col-gap-4,.col-gap-5,.col-gap-6,.col-gap-7,.col-gap-8,.col-gap-9,.col-gap-10,.col-gap-11,.col-gap-12,
+    .col-lg-gap-1,.col-lg-gap-2,.col-lg-gap-3,.col-lg-gap-4,.col-lg-gap-5,.col-lg-gap-6,.col-lg-gap-7,.col-lg-gap-8,.col-lg-gap-9,.col-lg-gap-10,.col-lg-gap-11,.col-lg-gap-12,
+    .col-md-gap-1,.col-md-gap-2,.col-md-gap-3,.col-md-gap-4,.col-md-gap-5,.col-md-gap-6,.col-md-gap-7,.col-md-gap-8,.col-md-gap-9,.col-md-gap-10,.col-md-gap-11,.col-md-gap-12,
+    .col-sm-gap-1,.col-sm-gap-2,.col-sm-gap-3,.col-sm-gap-4,.col-sm-gap-5,.col-sm-gap-6,.col-sm-gap-7,.col-sm-gap-8,.col-sm-gap-9,.col-sm-gap-10,.col-sm-gap-11,.col-sm-gap-12
+        float: left
+    .col-#{$i}
+        width: calc(100% / 12 * #{$i})
+        padding: 15px
+    .col-gap-#{$i}
+        width: calc(100% / 12 * #{$i} - 30px)
+        margin: 0 15px
+    @each $size1 in $list1
+        @media screen and (min-width: $desktop_size)
+            .col-#{$size1}-#{$i}
+                width: calc(100% / 12 * #{$i})
+            .col-#{$size1}-gap-#{$i}
+                width: calc(100% / 12 * #{$i} - 30px)
+                margin: 0 15px
+    @each $size2 in $list2
+        @media screen and (max-width: $desktop_size) and (min-width: $tablet_size)
+            .col-#{$size2}-#{$i}
+                width: calc(100% / 12 * #{$i})
+            .col-#{$size2}-gap-#{$i}
+                width: calc(100% / 12 * #{$i} - 30px)
+                margin: 0 15px
+    @each $size3 in $list3
+        @media screen and (max-width: $mobile_size)
+            .col-#{$size3}-#{$i}
+                width: calc(100% / 12 * #{$i})
+            .col-#{$size3}-gap-#{$i}
+                width: calc(100% / 12 * #{$i} - 30px)
+                margin: 0 15px
+.clearfix::after
+    content: ""
+    display: block
+    clear: both
